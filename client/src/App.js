@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
-import Image from "./components/Image";
+import Meme from "./components/Meme";
 import WhatAreMemes from './components/WhatAreMemes';
-import Home from './components/Home';
-
+import WhyMemes from './components/WhyMemes';
 
 function App() {
   const [memes, setMemes] = useState()
@@ -27,22 +26,22 @@ function App() {
         <h1> GOLDEN MEME RETRIEVER </h1>
         <ul>
           <li>
-            <Link to="/">Home</Link>
-            <Link to="/">Meme Me!</Link>
-            <Link to="/about">About</Link>
+            <Link to="/what">What?</Link><br />
+          </li>
+          <li>
+            <Link to="/why">Why?</Link>
           </li>
           </ul>
           <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/image" element={<Image />}></Route>
-          <Route path="/about" element={<WhatAreMemes />}></Route>
+          <Route path="/what" element={<WhatAreMemes />}></Route>
+          <Route path="/why" element={<WhyMemes />}></Route>
           </Routes>
       </header>
       <main>
           <button onClick={fetchData}>Meme Me</button><br/>
           {memes ? 
-          <Image memes={memes} />
-          : 'Give me a sec...'}
+          <Meme memes={memes} />
+          : 'Give me(me) a sec...'}
         </main>
       </section>
       </BrowserRouter>

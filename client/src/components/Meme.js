@@ -1,6 +1,7 @@
 import React from 'react'
 
-const Image = memes => {
+const Meme = memes => {
+  
   const randomIndex = (min, max) => {
     return Math.random() * (max - min) + min;
   };
@@ -8,11 +9,11 @@ const Image = memes => {
   const index = Math.floor(randomIndex(0, 255));
 
   return (
-    <section class="image">
+    <section className="image">
       <h4>{memes.memes[index].name}</h4>
       <img src={memes.memes[index].image} alt='PICS!'/>
     </section>
   )
 }
 
-export default Image
+export default Meme
