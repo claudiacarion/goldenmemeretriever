@@ -14,7 +14,7 @@ app.get('/',(req,res) => {
 app.get('/api',(req,res) => {
   fetch('https://alpha-meme-maker.herokuapp.com/memes/')
     .then(res => res.json())
-    .then(json => res.send(json))
+    .then(json => res.send(json.data))
     .catch(err => console.error('error:' + err));
 })
 
