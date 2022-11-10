@@ -1,7 +1,33 @@
-@import url("https://fonts.googleapis.com/css2?family=Mali&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
 
 * {
   background-color: rgb(35, 35, 35);
-  font-family: Mali;
-  color: white
+  font-family: Gamja Flower;
+  color: white;
+}
+
+li {
+  list-style: none;
+  font-size: 20px;
+  font-style: none;
+}
+
+h1 {
+  align-items: center;
+  font-size: 50px;
+  line-height: 55px;
+}
+
+p {
+  font-size: 25px;
+}
+
+button {
+  font-size: 15px;
+  background-color: rgb(144, 228, 230);
+  color: black
+}
+
+button:hover {
+
 }

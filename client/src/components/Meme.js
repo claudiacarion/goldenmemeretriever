@@ -22,17 +22,18 @@ const Home = () => {
 
   const printMeme = () => {
     const index = Math.floor(randomIndex(0, memes.length))
-    console.log(index, memes)
+  
     return (
-      <section className="image">
-        <h4>{memes[index].name}</h4>
+      <section className="image-container">
+        <h3>WHAT IS THIS MEME CALLED?</h3>
+        <h3>{memes[index].name}</h3>
         <img src={memes[index].image} alt='PICS!'/>
       </section>
     )
   }
 
   return <>
-    <button onClick={fetchData}> Meme Me </button>
+    <button onClick={fetchData}> Give me another one! </button>
     <br/>
     {
       memes ? 
