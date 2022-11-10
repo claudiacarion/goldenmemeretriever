@@ -10,6 +10,7 @@ function App() {
     <section className="App">
       <header>
         <h1> GOLDEN (MEME) RETRIEVER </h1>
+      </header>
         <nav>
         <ul>
           <li>
@@ -26,10 +27,9 @@ function App() {
           </li>
           </ul>
         </nav>
-      </header>
       <main className='main'>
           <Routes>
-          <Route path="/" element={<p>Don't you want a meme? Click on 'Get a random meme!'</p>}></Route>
+          <Route path="/" element={<p>Welcome to the Golden (Meme) Retriever! Click on 'Get a random meme!'</p>}></Route>
           <Route path="/memes" element={<Meme />}></Route>
           <Route path="/what" element={<WhatAreMemes />}></Route>
           <Route path="/why" element={<WhyMemes />}></Route>

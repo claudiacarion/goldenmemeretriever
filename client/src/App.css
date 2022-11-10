@@ -6,28 +6,91 @@
   color: white;
 }
 
+header {
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
 li {
+  display: flex;
+  justify-content: space-around;
   list-style: none;
   font-size: 20px;
   font-style: none;
 }
 
-h1 {
-  align-items: center;
-  font-size: 50px;
-  line-height: 55px;
+a {
+  color: rgb(144, 228, 230);
+  text-decoration: none; 
 }
 
-p {
+h1 {
+  align-items: center;
+  font-size: 30px;
+  line-height: 35px;
+}
+
+h3 {
+  align-items: center;
   font-size: 25px;
 }
 
+p {
+  font-size: 20px;
+}
+
+.meme-container {
+  display: flex;
+  justify-content: center;
+}
+
 button {
-  font-size: 15px;
+  font-size: 18px;
   background-color: rgb(144, 228, 230);
-  color: black
+  color: black;
+  width: 200px;
+  height: 40px;
+  border-radius: 3px;
 }
 
 button:hover {
+  text-transform: uppercase;
+  cursor: pointer;
+}
 
+img {
+  object-fit: cover;
+  height: 250px;
+}
+
+@media only screen and (min-width: 768px) {
+  /* For tablets: */
+  h1 {
+    align-items: center;
+    font-size: 50px;
+    line-height: 40px;
+  }
+
+  h1 {
+    align-items: center;
+    font-size: 35px;
+  }
+
+  p {
+    font-size: 25px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  /* For desktop: */
+  h1 {
+    align-items: center;
+    font-size: 65px;
+    line-height: 55px;
+  }
 }

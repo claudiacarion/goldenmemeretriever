@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 const Home = () => {
 
   const [memes, setMemes] = useState()
+  const [searchInput, setSearchInput] = useState('');
 
   const fetchData = (url) => {
     return fetch('/api')
@@ -15,6 +16,16 @@ const Home = () => {
     fetchData('/api')
   }, [])
 
+  const handleChange = (e) => {
+    e.preventDefault();
+    setSearchInput(e.target.value);
+  };
+  
+  if (searchInput.length > 0) {
+      memes.filter((memes) => {
+      return memes.id.match(searchInput);
+  });
+  }
 
   const randomIndex = (min, max) => {
     return Math.random() * (max - min) + min;
@@ -33,13 +44,15 @@ const Home = () => {
   }
 
   return <>
-    <button onClick={fetchData}> Give me another one! </button>
-    <br/>
-    {
-      memes ? 
-        printMeme()
-      : 'Give me(me) a sec...'
-    }
+    <section className='meme-container'>
+      <button onClick={fetchData}> Give me another one! </button>
+      <br/>
+      {
+        memes ? 
+          printMeme()
+        : 'Give me(me) a sec...'
+      }
+    </section>
   </>
 }
 
