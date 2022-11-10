@@ -44,7 +44,7 @@ const Home = () => {
   }
 
   return <>
-    <section className='meme-container'>
+    <section className="meme-container">
       <button onClick={fetchData}> Give me another one! </button>
       <br/>
       {

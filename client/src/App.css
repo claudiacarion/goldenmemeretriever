@@ -17,6 +17,7 @@ ul {
 }
 
 li {
+  text-align: center;
   display: flex;
   justify-content: space-around;
   list-style: none;
@@ -29,6 +30,11 @@ a {
   text-decoration: none; 
 }
 
+a:hover {
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
 h1 {
   align-items: center;
   font-size: 30px;
@@ -37,7 +43,7 @@ h1 {
 
 h3 {
   align-items: center;
-  font-size: 25px;
+  font-size: 22px;
 }
 
 p {
@@ -46,6 +52,10 @@ p {
 
 .meme-container {
   display: flex;
+  justify-content: center;
+}
+
+.image-container {
   justify-content: center;
 }
 
@@ -76,9 +86,9 @@ img {
     line-height: 40px;
   }
 
-  h1 {
+  h3 {
     align-items: center;
-    font-size: 35px;
+    font-size: 28px;
   }
 
   p {
