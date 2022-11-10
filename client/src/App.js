@@ -1,34 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import Image from "./components/Image";
 
 function App() {
   const [memes, setMemes] = useState()
-  const [input, setInput] = useState()
 
-  const fetchData = async(url) => {
-    const data = await fetch(url)
-    setMemes(data);
-  }
-
-  const dataHandler = (e) => {
-    e.preventDefault() //prevent page from rendering
-    console.log(memes)
+  const fetchData = (url) => {
+    return fetch('/api')
+      .then(res => res.json())
+      .then(data => setMemes(data))
+      .catch(err => console.error('error:' + err));
   }
 
   useEffect(() => { //fetch everything
     fetchData('/api')
   }, [])
 
-  // useEffect(() => { //fetch specific
-  //   fetchData(`/api/${input}`)
-  // }, [input])
-
   return (
-    <div className="App">
-      <h1> GOLDEN MEME RETRIEVER </h1>
-      <input onChange={e => setInput(e.target.value)}></input>
-      <button onClick={dataHandler}>Meme Me</button>
-    </div>
+    <section className="App">
+      <header>
+        <h1> GOLDEN MEME RETRIEVER </h1>
+      </header>
+      <main>
+          <button onClick={fetchData}>Meme Me</button><br/>
+          {memes ? 
+          <Image memes={memes} />
+          : 'Give me a sec...'}
+        </main>
+      </section>
   );
 }
 
