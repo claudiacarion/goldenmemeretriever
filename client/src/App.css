@@ -11,6 +11,14 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+.welcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu-items {
@@ -24,7 +32,6 @@ li {
   justify-content: center;
   list-style: none;
   font-size: 20px;
-  margin: 3px;
 }
 
 a {
@@ -71,10 +78,13 @@ p {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 button {
   font-size: 18px;
+  align-self: center;
   background-color: rgb(144, 228, 230);
   color: black;
   width: 200px;
@@ -88,8 +98,17 @@ button:hover {
 }
 
 img {
-  object-fit: cover;
+  object-fit: contain;
   height: 250px;
+}
+
+form {
+  margin: 10px;
+}
+
+input {
+  width: 200px;
+  font-size: 15px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -111,6 +130,11 @@ img {
   .menu-items {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .main {
+    margin-left: 100px;
+    margin-right: 100px;
   }
 }
 

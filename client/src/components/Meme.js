@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const Home = () => {
 
   const [memes, setMemes] = useState()
   const [searchInput, setSearchInput] = useState();
-
+  const searchText = useRef();
+  
   const fetchData = (url) => {
     return fetch('/api')
       .then(res => res.json())
@@ -12,21 +13,22 @@ const Home = () => {
       .catch(err => console.error('error:' + err));
   }
 
-  // const searchData = (id) => {
-  //   return fetch(`/api/${id}`)
-  //     .then(res => res.json())
-  //     .then(data => setMemes(data))
-  //     .catch(err => console.error('error:' + err));
-  // }
+  const searchData = (id) => {
+    return fetch(`/api/${id}`)
+      .then(res => res.json())
+      .then(data => setMemes(data))
+      .catch(err => console.error('error:' + err));
+  }
 
   useEffect(() => { //fetch everything
     fetchData('/api')
   }, [])
 
-  // const handleChange = (e) => {
-  //   e.preventDefault();
-  //   setSearchInput(e.target.value);
-  // };
+  const handleChange = (e) => {
+    e.preventDefault();
+    searchData(searchText.current.value)
+    // setSearchInput(e.target.value);
+  };
 
   const randomIndex = (min, max) => {
     return Math.random() * (max - min) + min;
@@ -40,7 +42,10 @@ const Home = () => {
         <h3>WHAT IS THIS MEME CALLED?</h3>
         <h3>{memes[index].name}</h3>
         <img src={memes[index].image} alt='Oh no! The image link is broken in the API!'/>
-        {/* <input className='search' type="text" placeholder='Enter a number 0-255' onChange={(e) => searchData(e)}/> */}
+        <form onSubmit={handleChange}>
+        <input ref={searchText} className='search' type="number" placeholder='Enter a number between 0-255' />
+        </form>
+        <button> Search! </button>
       </section>
     )
   }

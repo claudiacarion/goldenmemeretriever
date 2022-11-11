@@ -31,7 +31,8 @@ function App() {
       </header>
       <main className='main'>
           <Routes>
-          <Route path="/" element={<p>Welcome to the Golden (Meme) Retriever! Click on 'Get a random meme!'</p>}></Route>
+          <Route path="/" element={<><p className='welcome'>Welcome to the Golden (Meme) Retriever! <br />Click on 'Get a random meme!'</p><img src='http://cdn.akc.org/content/article-body-image/via_pinterest.jpg' alt="Welcome image is broken!" className='welcome-img' /></>
+}></Route>
           <Route path="/memes" element={<Meme />}></Route>
           <Route path="/what" element={<WhatAreMemes />}></Route>
           <Route path="/why" element={<WhyMemes />}></Route>
