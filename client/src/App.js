@@ -9,10 +9,11 @@ function App() {
     <BrowserRouter>
     <section className="App">
       <header>
-        <h1> GOLDEN (MEME) RETRIEVER </h1>
-      </header>
+        <div>
+          <h1> GOLDEN (MEME) RETRIEVER </h1>
+        </div>
         <nav>
-        <ul>
+        <ul className='menu-items'>
           <li>
             <Link to="/">I wanna go home!</Link><br />
           </li>
@@ -27,6 +28,7 @@ function App() {
           </li>
           </ul>
         </nav>
+      </header>
       <main className='main'>
           <Routes>
           <Route path="/" element={<p>Welcome to the Golden (Meme) Retriever! Click on 'Get a random meme!'</p>}></Route>

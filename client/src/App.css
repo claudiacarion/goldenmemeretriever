@@ -8,21 +8,23 @@
 
 header {
   display: flex;
-  justify-content: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-ul {
+.menu-items {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  padding-left: 0;
 }
 
 li {
-  text-align: center;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   list-style: none;
   font-size: 20px;
-  font-style: none;
+  margin: 3px;
 }
 
 a {
@@ -38,12 +40,13 @@ a:hover {
 h1 {
   align-items: center;
   font-size: 30px;
-  line-height: 35px;
+  margin: 5px;
 }
 
 h3 {
   align-items: center;
   font-size: 22px;
+  margin: 2px;
 }
 
 p {
@@ -53,10 +56,21 @@ p {
 .meme-container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .image-container {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  text-align: center;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 button {
@@ -83,7 +97,6 @@ img {
   h1 {
     align-items: center;
     font-size: 50px;
-    line-height: 40px;
   }
 
   h3 {
@@ -94,6 +107,11 @@ img {
   p {
     font-size: 25px;
   }
+
+  .menu-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -101,6 +119,10 @@ img {
   h1 {
     align-items: center;
     font-size: 65px;
-    line-height: 55px;
-  }
+}
+
+.menu-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
 }
