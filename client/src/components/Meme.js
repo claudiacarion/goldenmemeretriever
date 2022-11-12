@@ -41,7 +41,7 @@ const Home = () => {
       <section className="image-container">
         <h3>WHAT IS THIS MEME CALLED?</h3>
         <h3>{memes[index].name}</h3>
-        <img src={memes[index].image} alt='Oh no! The image link is broken in the API!'/>
+        <img src={memes[index].image} alt='Oh no! The URL is broken in the API!'/>
         <form onSubmit={handleChange}>
         <input ref={searchText} className='search' type="number" placeholder='Enter a number between 0-255' />
         </form>
